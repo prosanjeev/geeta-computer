@@ -1,6 +1,8 @@
 import { useContext, useState } from "react";
 import myContext from "../../context/myContext";
 import { useNavigate } from "react-router";
+import { AiOutlineSearch } from 'react-icons/ai';
+
 
 
 const SearchBar = () => {
@@ -18,13 +20,19 @@ const SearchBar = () => {
         <div className="">
             {/* search input  */}
             <div className="input flex justify-center">
+            <div className="relative">
                 <input
                     type="text"
-                    placeholder='Search here'
+                    placeholder="Search here"
+                    value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    className=' bg-gray-200 placeholder-gray-400 rounded-lg px-2 py-2 w-96 lg:w-96 md:w-96 outline-none text-black '
+                    className="bg-gray-200 placeholder-gray-400 rounded-lg px-2 py-2 h-12 w-96 lg:w-96 md:w-96 outline-none text-black"
                 />
+                <div className="absolute inset-y-0 right-0 flex items-center pointer-events-none">
+                    <AiOutlineSearch className="text-gray-400 size-6" />
+                </div>
             </div>
+        </div>
 
             {/* search drop-down  */}
             <div className=" flex justify-center">

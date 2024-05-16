@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-import Layout from "../../components/layout/Layout";
 import myContext from "../../context/myContext";
 import { useParams } from "react-router";
 import { fireDB } from "../../firebase/FirebaseConfig";
@@ -60,7 +59,7 @@ const ProductInfo = () => {
 
     }, [])
     return (
-        <Layout>
+        <>
             <section className="py-5 lg:py-16 font-poppins dark:bg-gray-800">
                 {loading ?
                     <>
@@ -188,7 +187,7 @@ const ProductInfo = () => {
                     </>}
             </section>
 
-        </Layout>
+        </>
     );
 }
 

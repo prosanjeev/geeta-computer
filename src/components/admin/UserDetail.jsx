@@ -1,9 +1,19 @@
-import { useContext } from "react";
-import myContext from "../../context/myContext";
+
+import { useDispatch, useSelector } from "react-redux";
+import { getAllUserFunction } from "../../redux/user/userAction";
+import { useEffect } from "react";
 
 const UserDetail = () => {
-    const context = useContext(myContext);
-    const { getAllUser } = context;
+    const dispatch = useDispatch();
+    const { getAllUser } = useSelector((state) => state.user);
+  
+    useEffect(() => {
+        dispatch(getAllUserFunction());
+    }, [dispatch]);
+
+    // const context = useContext(myContext);
+    // const { getAllUser } = context;
+
     return (
         <div>
             <div>

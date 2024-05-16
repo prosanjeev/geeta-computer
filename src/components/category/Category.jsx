@@ -4,35 +4,35 @@ import { useNavigate } from "react-router";
 const category = [
     {
         image: 'https://cdn-icons-png.flaticon.com/256/12142/12142416.png',
-        name: 'Laptops'
+        name: 'laptops'
     },
     {
         image: 'https://cdn-icons-png.flaticon.com/128/1753/1753751.png',
-        name: 'Desktops'
+        name: 'desktops'
     },
     {
         image: 'https://cdn-icons-png.flaticon.com/128/3474/3474362.png',
-        name: 'Monitors'
+        name: 'monitors'
     },
     {
         image: 'https://cdn-icons-png.flaticon.com/128/4154/4154727.png',
-        name: 'Keyboards'
-    },
-    {
-        image: 'https://cdn-icons-png.flaticon.com/256/12142/12142416.png',
-        name: 'laptop'
+        name: 'keyboards'
     },
     {
         image: 'https://cdn-icons-png.flaticon.com/128/2248/2248732.png',
-        name: 'Mouse'
+        name: 'mouse'
+    },
+    {
+        image: 'https://cdn-icons-png.flaticon.com/128/2905/2905974.png',
+        name: 'anti virus'
     },
     {
         image: 'https://cdn-icons-png.flaticon.com/128/2061/2061087.png',
-        name: 'Speakers'
+        name: 'speakers'
     },
     {
         image: 'https://cdn-icons-png.flaticon.com/128/2729/2729081.png',
-        name: 'Accessories'
+        name: 'accessories'
     }
 ]
 

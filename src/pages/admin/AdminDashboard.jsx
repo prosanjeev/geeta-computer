@@ -3,23 +3,35 @@ import { AiOutlineLogout } from "react-icons/ai";
 import ProductDetail from "../../components/admin/ProductDetail";
 import OrderDetail from "../../components/admin/OrderDetail";
 import UserDetail from "../../components/admin/UserDetail";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import myContext from "../../context/myContext";
 import { FaComputer } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchOrders } from "../../redux/order/orderAction";
+import { getAllUserFunction } from "../../redux/user/userAction";
 
 const AdminDashboard = () => {
   const user = JSON.parse(localStorage.getItem("users"));
   const context = useContext(myContext);
-  const { getAllProduct, getAllOrder, getAllUser } = context;
+  const { getAllProduct} = context;
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { orders } = useSelector((state) => state.order);
+  const { getAllUser } = useSelector((state) => state.user);
+  
+ 
+  useEffect(() => {
+    dispatch(fetchOrders());
+    dispatch(getAllUserFunction());
+  }, [dispatch]);
 
-     // navigate 
-     const navigate = useNavigate();
- // logout function 
- const logout = () => {
-    localStorage.clear('users');
-    navigate("/login")
-}
+  // navigate
+  // logout function
+  const logout = () => {
+    localStorage.clear("users");
+    navigate("/login");
+  };
 
   return (
     <div>
@@ -27,16 +39,20 @@ const AdminDashboard = () => {
       <div className="top mb-5 px-5 mt-5">
         <div className=" bg-pink-50 py-5 border border-pink-100 rounded-lg flex justify-around items-center">
           <h1 className=" text-center text-3xl font-bold text-pink-500">
-          <FaComputer />
+            <FaComputer />
           </h1>
           <h1 className=" text-center text-2xl font-bold text-pink-500">
             Admin Dashboard
           </h1>
-         <div className="flex items-center gap-2 cursor-pointer" onClick={logout}>
-             <h1 className=" text-center text-2xl font-bold text-pink-500">
-            Logout
-          </h1>
-          <AiOutlineLogout className=" text-center text-2xl font-bold text-pink-500" /></div>
+          <div
+            className="flex items-center gap-2 cursor-pointer"
+            onClick={logout}
+          >
+            <h1 className=" text-center text-2xl font-bold text-pink-500">
+              Logout
+            </h1>
+            <AiOutlineLogout className=" text-center text-2xl font-bold text-pink-500" />
+          </div>
         </div>
       </div>
 
@@ -142,7 +158,7 @@ const AdminDashboard = () => {
                     </svg>
                   </div>
                   <h2 className="title-font font-medium text-3xl text-pink-400 fonts1">
-                    {getAllOrder.length}
+                    {orders.length}
                   </h2>
                   <p className=" text-pink-500  font-bold">Total Order</p>
                 </div>

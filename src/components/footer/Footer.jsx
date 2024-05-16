@@ -1,9 +1,17 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
     <div>
+       <iframe
+           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3590.1356918305883!2d85.7824551120685!3d25.865011077192555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed9191996e93fd%3A0x95600d90273c4f41!2sGeeta%20Second%20Laptop!5e0!3m2!1sen!2sin!4v1715277894519!5m2!1sen!2sin"
+          width="100%"
+          height="450"
+          style={{ border: 0 }}
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
       <footer className="text-gray-600 body-font bg-gray-300">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap md:text-left text-center order-first">
@@ -57,11 +65,11 @@ function Footer() {
           <div className="container px-5 py-3 mx-auto flex items-center sm:flex-row flex-col">
             <Link to={'/'} className='flex'>
               <div className="flex ">
-                <h1 className=' text-2xl font-bold text-black  px-2 py-1 rounded'>Geeta-Computer</h1>
+                <h1 className=' text-2xl font-bold text-black  px-2 py-1 rounded'>Geeta second laptop</h1>
               </div>
             </Link>
-            <p className="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">© 2020 Geeta-Computer —
-              <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank">www.geetacomputer.com</a>
+            <p className="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">© 2020 Geeta second laptop —
+              <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank">www.geetasecondlaptop.com</a>
             </p>
             <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
               <a className="text-gray-500">

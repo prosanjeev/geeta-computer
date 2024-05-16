@@ -5,12 +5,14 @@ import { getAuth } from 'firebase/auth';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDBHTUtOeuCON7AEF3UPPxU1sHsnFfBv-M",
-    authDomain: "ecommerce-for.firebaseapp.com",
-    projectId: "ecommerce-for",
-    storageBucket: "ecommerce-for.appspot.com",
-    messagingSenderId: "609664686595",
-    appId: "1:609664686595:web:302bf25cc8efa64a4e4c36"
+    apiKey: "AIzaSyBN2IjoE4jhPXSiL9IlPn9QaAprQCdDQLg",
+    authDomain: "react-contact-dabd2.firebaseapp.com",
+    databaseURL: "https://react-contact-dabd2-default-rtdb.firebaseio.com",
+    projectId: "react-contact-dabd2",
+    storageBucket: "react-contact-dabd2.appspot.com",
+    messagingSenderId: "699426357246",
+    appId: "1:699426357246:web:720518ddea75ea9f45caaf",
+    measurementId: "G-H5ZZWVPPK5"
 };
 
 // Initialize Firebase

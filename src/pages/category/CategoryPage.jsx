@@ -1,5 +1,4 @@
 import { useNavigate, useParams } from "react-router";
-import Layout from "../../components/layout/Layout";
 import { useContext, useEffect } from "react";
 import myContext from "../../context/myContext";
 import Loader from "../../components/loader/Loader";
@@ -37,7 +36,7 @@ const CategoryPage = () => {
         localStorage.setItem('cart', JSON.stringify(cartItems));
     }, [cartItems])
     return (
-        <Layout>
+        <>
             <div className="mt-10">
                 {/* Heading  */}
                 <div className="">
@@ -124,7 +123,7 @@ const CategoryPage = () => {
                     </>
                 }
             </div>
-        </Layout>
+        </>
     );
 }
 

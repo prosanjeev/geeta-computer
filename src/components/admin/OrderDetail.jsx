@@ -1,10 +1,16 @@
-import { useContext } from "react";
-import myContext from "../../context/myContext";
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchOrders } from '../../redux/order/orderAction';
 
 const OrderDetail = () => {
-    const context = useContext(myContext);
-    const { getAllOrder, orderDelete } = context;
-    // console.log(getAllOrder)
+    const dispatch = useDispatch();
+    const { orders } = useSelector(state => state.order);
+  
+    useEffect(() => {
+      dispatch(fetchOrders());
+    }, [dispatch]);
+  
+
     return (
         <div>
             <div>
@@ -99,7 +105,7 @@ const OrderDetail = () => {
 
 
                             </tr>
-                            {getAllOrder.map((order) => {
+                            {orders && orders.map((order) => {
                                 console.log(order)
                                 return (
                                     <>
@@ -167,9 +173,9 @@ const OrderDetail = () => {
                                                         {order.date}
                                                     </td>
 
-                                                    <td onClick={()=> orderDelete(order.id)} className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 text-red-500 cursor-pointer ">
+                                                    {/* <td onClick={()=> orderDelete(order.id)} className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 text-red-500 cursor-pointer ">
                                                         Delete
-                                                    </td>
+                                                    </td> */}
                                                 </tr>
                                             )
                                         })}
